@@ -6,7 +6,7 @@ import WheatherHeader from "./components/wheather-header/WheatherHeader";
 
 function App() {
 	return (
-		<div className="flex flex-col items-center h-screen pt-2 px-3">
+		<div className="flex flex-col items-center h-screen pt-2 px-3 bg-gray-100">
 			<WheatherHeader />
 			<WheatherBrief />
 			<WheatherBox />
