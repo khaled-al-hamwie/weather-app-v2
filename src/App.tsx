@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import WheatherBrief from "./components/wheater-brife/WheatherBrief";
-import WheatherHeader from "./components/wheater-header/wheather-header";
 import WheatherBox from "./components/wheather-box/WheatherBox";
+import WheatherHeader from "./components/wheather-header/WheatherHeader";
 
 function App() {
 	return (
