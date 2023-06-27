@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import LoadingDots from "./components/loading-dots/LoadingDots";
 import WeatherBox from "./components/weather-box/WeatherBox";
 import WeatherBrief from "./components/weather-brife/WeatherBrief";
 import WeatherHeader from "./components/weather-header/WeatherHeader";
@@ -29,11 +30,7 @@ function App() {
 				</>
 			) : (
 				<div className="w-full h-full grid place-content-center">
-					<div className="flex">
-						<div className="h-2.5 w-2.5 bg-current rounded-full mr-1 animate-bounce"></div>
-						<div className="h-2.5 w-2.5 bg-current rounded-full mr-1 animate-bounce"></div>
-						<div className="h-2.5 w-2.5 bg-current rounded-full animate-bounce"></div>
-					</div>
+					<LoadingDots />
 				</div>
 			)}
 		</div>
