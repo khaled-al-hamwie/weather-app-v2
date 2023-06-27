@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { WeatherResponse } from "../../helpers/interfaces/weatherRespone.interface";
 
-export default function WheatherBox({
+export default function WeatherBox({
 	weather,
 	wind: { speed },
 	cod,

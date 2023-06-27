@@ -1,7 +1,7 @@
 import React from "react";
 import { WeatherResponse } from "../../helpers/interfaces/weatherRespone.interface";
 
-export default function WheatherBrief({
+export default function WeatherBrief({
 	main: { temp },
 	weather,
 }: WeatherResponse) {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import WheatherBox from "./components/wheather-box/WheatherBox";
-import WheatherBrief from "./components/wheather-brife/WheatherBrief";
-import WheatherHeader from "./components/wheather-header/WheatherHeader";
+import WeatherBox from "./components/weather-box/WeatherBox";
+import WeatherBrief from "./components/weather-brife/WeatherBrief";
+import WeatherHeader from "./components/weather-header/WeatherHeader";
 import getCoords from "./helpers/getCoords";
 import getWheather from "./helpers/getWheather";
 import { Coords } from "./helpers/interfaces/coords.interface";
@@ -23,9 +23,9 @@ function App() {
 			{weather ? (
 				<>
 					{" "}
-					<WheatherHeader {...weather} />
-					<WheatherBrief {...weather} />
-					<WheatherBox {...weather} />{" "}
+					<WeatherHeader {...weather} />
+					<WeatherBrief {...weather} />
+					<WeatherBox {...weather} />{" "}
 				</>
 			) : (
 				<div className="w-full h-full grid place-content-center">
