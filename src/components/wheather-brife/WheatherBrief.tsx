@@ -13,10 +13,14 @@ export default function WheatherBrief({
 	};
 	const formattedDate = currentDate.toLocaleDateString(undefined, options);
 	return (
-		<div className=" w-full flex justify-evenly mb-8">
-			<div className="w-1/4 text-7xl h-20">{temp}&deg;</div>
-			<div className="w-0.5 bg-gray-500"></div>
-			<div className="flex flex-col justify-evenly pl-1">
+		<div className=" w-full grid grid-cols-3 gap-0 mb-8 px-2 ">
+			<div className="flex justify-center items-center h-20 ">
+				<div className="text-5xl ">{temp}&deg;</div>
+			</div>
+			<div className="flex justify-center">
+				<div className="w-0.5 bg-gray-500"></div>
+			</div>
+			<div className="flex flex-col justify-evenly items-center text-center pl-1 ">
 				<p className="capitalize font-bold text-lg">
 					{weather[0].main}
 				</p>
