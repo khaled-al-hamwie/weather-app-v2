@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LoadingDots from "./components/loading-dots/LoadingDots";
 import Search from "./components/search/Search";
 import WeatherBox from "./components/weather-box/WeatherBox";
 import WeatherBrief from "./components/weather-brife/WeatherBrief";
 import WeatherHeader from "./components/weather-header/WeatherHeader";
-import getCoords from "./helpers/getCoords";
-import getWheather from "./helpers/getWheather";
+import geoUpdate from "./helpers/geoUpdate";
 import { Coords } from "./helpers/interfaces/coords.interface";
 import { WeatherResponse } from "./helpers/interfaces/weatherRespone.interface";
+import onCoordsUpdate from "./helpers/onCoordsUpdate";
 
 function App() {
 	const [weather, setWeather] = useState<WeatherResponse>();
@@ -15,30 +15,10 @@ function App() {
 	const [coords, setCoords] = useState<Coords>({ lat: 0, lon: 0 });
 	const [errors, setErrors] = useState("");
 	useEffect(() => {
-		setErrors("");
-		setIsLoading(true);
-		getCoords()
-			.then((coords: Coords) => getWheather(coords.lat, coords.lon))
-			.then((data) => {
-				setWeather(data);
-				setIsLoading(false);
-			})
-			.catch((errors) => {
-				console.log(errors);
-				setErrors("geo code is not supported in you browser");
-			});
+		geoUpdate(setErrors, setIsLoading, setWeather);
 	}, []);
 	useEffect(() => {
-		setErrors("");
-		setIsLoading(true);
-		getWheather(coords.lat, coords.lon)
-			.then((data) => {
-				setWeather(data);
-				setIsLoading(false);
-			})
-			.catch(() => {
-				setErrors("couldn't find your city");
-			});
+		onCoordsUpdate(setErrors, setIsLoading, setWeather, coords);
 	}, [coords]);
 
 	let content;
@@ -47,10 +27,9 @@ function App() {
 	} else if (!isLoading && weather) {
 		content = (
 			<>
-				{" "}
 				<WeatherHeader {...weather} />
 				<WeatherBrief {...weather} />
-				<WeatherBox {...weather} />{" "}
+				<WeatherBox {...weather} />
 			</>
 		);
 	} else {
