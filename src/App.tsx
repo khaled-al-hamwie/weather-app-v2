@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import LoadingDots from "./components/loading-dots/LoadingDots";
+import Search from "./components/search/Search";
 import WeatherBox from "./components/weather-box/WeatherBox";
 import WeatherBrief from "./components/weather-brife/WeatherBrief";
-import Search from "./components/weather-header/Search";
 import WeatherHeader from "./components/weather-header/WeatherHeader";
 import getCoords from "./helpers/getCoords";
 import getWheather from "./helpers/getWheather";
