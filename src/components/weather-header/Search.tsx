@@ -23,7 +23,9 @@ const Search = (props: any) => {
 									lon: location[0].lon,
 								})
 							)
-							.catch(console.log);
+							.catch(() =>
+								props.setErrors("location don'nt exists")
+							);
 						setLocation("");
 					}
 				}}
@@ -42,7 +44,7 @@ const Search = (props: any) => {
 								lon: location[0].lon,
 							})
 						)
-						.catch(console.log);
+						.catch(() => props.setErrors("location don'nt exists"));
 					setLocation("");
 				}}>
 				Search

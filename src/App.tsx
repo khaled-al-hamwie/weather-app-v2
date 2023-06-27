@@ -62,7 +62,11 @@ function App() {
 	}
 	return (
 		<div className="flex flex-col items-center h-screen pt-2 px-3 bg-gray-100">
-			<Search setCoords={setCoords} setIsLoading={setIsLoading} />
+			<Search
+				setCoords={setCoords}
+				setIsLoading={setIsLoading}
+				setErrors={setErrors}
+			/>
 			{content}
 		</div>
 	);
