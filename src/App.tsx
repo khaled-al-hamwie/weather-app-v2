@@ -20,9 +20,22 @@ function App() {
 
 	return (
 		<div className="flex flex-col items-center h-screen pt-2 px-3 bg-gray-100">
-			{weather ? <WheatherHeader {...weather} /> : <div>h</div>}
-			{weather ? <WheatherBrief {...weather} /> : <div>h</div>}
-			{weather ? <WheatherBox {...weather} /> : <div>h</div>}
+			{weather ? (
+				<>
+					{" "}
+					<WheatherHeader {...weather} />
+					<WheatherBrief {...weather} />
+					<WheatherBox {...weather} />{" "}
+				</>
+			) : (
+				<div className="w-full h-full grid place-content-center">
+					<div className="flex">
+						<div className="h-2.5 w-2.5 bg-current rounded-full mr-1 animate-bounce"></div>
+						<div className="h-2.5 w-2.5 bg-current rounded-full mr-1 animate-bounce"></div>
+						<div className="h-2.5 w-2.5 bg-current rounded-full animate-bounce"></div>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }
