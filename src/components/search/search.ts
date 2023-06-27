@@ -1,6 +1,7 @@
 import getLocationCoords from "../../helpers/getLocationCoords";
 
 export default function search(location: string, setLocation: any, props: any) {
+	props.setErrors("");
 	props.setIsLoading(true);
 	getLocationCoords(location)
 		.then((location) =>
