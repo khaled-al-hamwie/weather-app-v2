@@ -13,9 +13,9 @@ export default function WeatherBox({
 			<img
 				src={`https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
 				alt="weather"
-				className="rounded bg-slate-200 w-44"
+				className="rounded w-44"
 			/>
-			<div className="flex flex-col rounded w-2/3 bg-white h-32 justify-evenly items-center">
+			<div className="flex flex-col rounded w-2/3 bg-white h-full justify-evenly items-center">
 				<div className=" w-3/4  grid grid-cols-4 gap-4 text-gray-400">
 					<FontAwesomeIcon
 						icon={icon({
